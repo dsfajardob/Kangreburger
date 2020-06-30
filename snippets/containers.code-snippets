@@ -1,0 +1,10 @@
+{
+    "CONTAINERS": {
+        "prefix": "CONTENEDOR(ES)",
+        "body": [
+            "CONTENEDORES ${1|STRING1,STRING2 STRING2|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

@@ -1,0 +1,10 @@
+{
+    "INT": {
+        "prefix": "int",
+        "body": [
+            "${1:n}"
+        ],
+		"description": "1 - 999999"
+		
+	},
+}

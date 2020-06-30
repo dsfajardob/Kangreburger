@@ -1,0 +1,10 @@
+{
+    
+	"MORE": {
+		"prefix": ", STRING3 = STRING4",
+		"body": [
+			", ${1:STRING} = ${2:STRING}"
+		],
+		"description": ""
+	},
+}

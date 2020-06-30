@@ -1,0 +1,10 @@
+{
+    "STOPSIGNAL": {
+        "prefix": "DETENIENDO A STRING/INT",
+        "body": [
+            "DETENIENDO A ${1|STRING,INT|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

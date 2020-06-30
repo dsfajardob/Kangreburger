@@ -1,0 +1,10 @@
+{
+    "VOLUME": {
+        "prefix": "EN EL VOLUMEN params",
+        "body": [
+            "EN EL VOLUMEN ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

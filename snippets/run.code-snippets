@@ -1,0 +1,10 @@
+{
+    "RUN": {
+        "prefix": "QUE EJECUTE STRING ",
+        "body": [
+            "QUE EJECUTE ${1:STRING}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

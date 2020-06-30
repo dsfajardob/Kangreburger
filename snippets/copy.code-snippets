@@ -1,0 +1,10 @@
+{
+    "COPY": {
+        "prefix": "COPIANDO STRING1 EN STRING2, ...",
+        "body": [
+            "COPIANDO ${1:STRING1} = ${2:STRING2} ,"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

@@ -1,0 +1,10 @@
+{
+    "STRING": {
+        "prefix": "STRING",
+        "body": [
+            "${nombre:STRING}"
+        ],
+		"description": " ((a-z)*(A-Z)* (. , _ -  “ ‘)(0-9)*)*",
+		
+	},
+}

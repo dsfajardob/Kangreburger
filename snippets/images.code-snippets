@@ -1,0 +1,10 @@
+{
+    "IMAGES": {
+        "prefix": "images",
+        "body": [
+            "${params}"
+        ],
+		"description": "CONTENEDORES",
+		
+	},
+}

@@ -1,0 +1,10 @@
+{
+    "SHELL": {
+        "prefix": "SHELL PARAMS",
+        "body": [
+            "SHELL ${1:PARAMS}"
+        ],
+		"description": "Llamar parametros del SHELL",
+		
+	},
+}

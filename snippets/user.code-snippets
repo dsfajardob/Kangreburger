@@ -1,0 +1,10 @@
+{
+    "USER": {
+        "prefix": "PARA EL USUARIO users",
+        "body": [
+            "PARA EL USUARIO ${1:users}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

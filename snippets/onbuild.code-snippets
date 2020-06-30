@@ -1,0 +1,10 @@
+{
+    "ONBUILD": {
+        "prefix": "AL CONSTRUIR STRING1 ",
+        "body": [
+            "AL CONSTRUIR ${1:STRING1}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

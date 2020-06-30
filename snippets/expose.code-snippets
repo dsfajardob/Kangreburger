@@ -1,0 +1,10 @@
+{
+    "EXPOSE": {
+        "prefix": "EN EL PUERTO params",
+        "body": [
+            "EN EL PUERTO ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

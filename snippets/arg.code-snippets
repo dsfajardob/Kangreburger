@@ -1,0 +1,10 @@
+{
+    "ARG": {
+        "prefix": "CON EL ARGUMENTO params",
+        "body": [
+            "CON EL ARGUMENTO ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

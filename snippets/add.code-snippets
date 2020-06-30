@@ -1,0 +1,10 @@
+{
+    "ADD": {
+        "prefix": "AGREGANDO STRING1 EN STRING2, ...",
+        "body": [
+            "AGREGANDO ${1:STRING1} = ${2:STRING2} ,"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

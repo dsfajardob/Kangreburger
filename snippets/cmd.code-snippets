@@ -1,0 +1,10 @@
+{
+    "CMD": {
+        "prefix": "CMD",
+        "body": [
+            "${1:CMD}"
+        ],
+		"description": "Llamado al CMD",
+		
+	},
+}

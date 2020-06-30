@@ -1,0 +1,10 @@
+{
+    "WORKDIR": {
+        "prefix": "EN DIRECTORIO DE TRABAJO STRING",
+        "body": [
+            "EN DIRECTORIO DE TRABAJO ${1:STRING}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

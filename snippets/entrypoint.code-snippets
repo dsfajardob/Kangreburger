@@ -1,0 +1,10 @@
+{
+    "ENTRYPOINT": {
+        "prefix": "INICIANDO CON params",
+        "body": [
+            "INICIANDO CON ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

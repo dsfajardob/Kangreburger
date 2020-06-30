@@ -1,0 +1,10 @@
+{
+    "HEALTHCHECK": {
+        "prefix": "REVISANDO paramas",
+        "body": [
+            "CON LA ETIQUETA ${1|NADA,params|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}

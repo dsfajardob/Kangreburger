@@ -1,0 +1,10 @@
+{
+    "START_VARIOUS": {
+        "prefix": "NECESITO N CONTENEDOR(ES) DE",
+        "body": [
+            "NECESITO $N ${1|CONTENEDOR,CONTENEDORES|} DE "
+        ],
+        "description": "Regla inicial de la gramática",
+        
+    },
+}

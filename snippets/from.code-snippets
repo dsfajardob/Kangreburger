@@ -1,0 +1,10 @@
+{
+    "FROM": {
+        "prefix": "DE images",
+        "body": [
+            "DE ${1:images}"
+        ],
+		"description": "CONTENEDORES",
+		
+	},
+}

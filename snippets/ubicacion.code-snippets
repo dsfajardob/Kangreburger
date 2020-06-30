@@ -1,0 +1,10 @@
+{
+    "VOLUME_UBI": {
+        "prefix": "EN LA UBICACION params",
+        "body": [
+            "EN LA UBICACION ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+}
