@@ -108,7 +108,7 @@ export class  Translator{
             if(this.reservedWords.includes(word)){
                 //console.log(word);
                 if(this.CurrentLanguaje.get(word)){
-                    currentRule = this.CurrentLanguaje.get(word)
+                    currentRule = this.CurrentLanguaje.get(word);
                     dockerBody = dockerBody + "\n" + currentRule;
                 }                
             } else { //in case dont, just add to the file
@@ -175,39 +175,39 @@ export class  Translator{
     }
     
     reservedWords = [
-        "NECESITO",
-        "DE",
-        "QUE",
-        "EJECUTE",
-        "CON",
-        "LA",
-        "ETIQUETA",
-        "LAS",
-        "LOS",
-        "ETIQUETAS",
-        "EN",
-        "EL",
-        "PUERTO",
-        "VARIABLE",
-        "ENTORNO",
-        "VARIABLES",
-        "AGREGANDO",
-        "COPIANDO",
-        "INICIANDO",
+        "NECESITO", //
+        "DE",//
+        "QUE",//
+        "EJECUTE",//
+        "CON",//
+        "LA",//
+        "ETIQUETA",//
+        "LAS",//
+        "LOS",//
+        "ETIQUETAS",//
+        "EN",//
+        "EL",//
+        "PUERTO",//
+        "VARIABLE",//
+        "ENTORNO",//
+        "VARIABLES",//
+        "AGREGANDO",//
+        "COPIANDO",//
+        "INICIANDO",//
         "UBICACION",
-        "VOLUMEN",
-        "PARA",
-        "USUARIO",
+        "VOLUMEN",//
+        "PARA",//
+        "USUARIO",//
         "DIRECTORIO",
-        "TRABAJO",
-        "ARGUMENTO",
-        "ARGUMENTOS",
-        "CONSTRUIR",
-        "DETENIENDO",
-        "A",
-        "REVISANDO",
+        "TRABAJO",//
+        "ARGUMENTO",//
+        "ARGUMENTOS",//
+        "CONSTRUIR",//
+        "DETENIENDO",//
+        "A",//
+        "REVISANDO",//
         "NADA",
-        "SHELL",
-        "CMD",
+        "SHELL",//
+        "CMD",//
     ];
 }

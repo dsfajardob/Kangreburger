@@ -13,13 +13,23 @@
 		},
 		{
 			"include": "#reserved"
+		},
+		{
+			"include": "#common"
+		},
+		{
+			"include": "#orders"
+		},
+		{
+			"include": "#infinitive"
 		}
+	
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.almejalang",
-				"match": "\\b(if|while|for|return|NECESITO)\\b"
+				"match": "\\b(if|while|for|return|NECESITO|EJECUTE)\\b"
 			}]
 		},
 		"strings": {
@@ -36,13 +46,31 @@
 		"auxiliars": {
 			"patterns": [{
 				"name": "keyword.other.almejalang",
-				"match": "\\b(EL|EN|DE|A)\\b"
+				"match": "\\b(EL|EN|DE|A|LA|LOS|LAS|PARA|CON|QUE)\\b"
 			}]		
 		},
 		"reserved":{
 			"patterns": [{
+				"name": "variable.languaje.almejalang",
+				"match": "\\b(VOLUMEN|CONTENEDOR|USUARIO|TRABAJO|ENTORNO|PUERTO|DIRECTORIO)\\b"
+			}]
+		},
+		"common":{
+			"patterns": [{
+				"name": "string.other.almejalang",
+				"match": "\\b(VARIABLE|VARIABLES|ARGUMENTO|ARGUMENTOS|ETIQUETA|ETIQUETAS)\\b"
+			}]
+		},
+		"orders":{
+			"patterns": [{
+				"name": "support.function.almejalang",
+				"match": "\\b(SHELL|CMD|CONSTRUIR)\\b"
+			}]
+		},
+		"infinitive":{
+			"patterns": [{
 				"name": "entity.name.type.almejalang",
-				"match": "\\b(VOLUMEN|CONTENEDOR)\\b"
+				"match": "\\b(AGREGANDO|COPIANDO|INICIANDO|REVISANDO|DETENIENDO)\\b"
 			}]
 		}
 
