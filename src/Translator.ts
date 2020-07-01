@@ -17,44 +17,45 @@ export class  Translator{
         let parts = code.split("\n");
         //console.log(parts);
         this.getLanguage(parts[0]);
-        
+
         //now get the code from almeja to Docker
         let dockerCode = "FROM ";
         this.getContainers(parts[0]);
+        
         //console.log(this.Containers);
-
         //Create the respective files
         this.Containers.forEach(element => {
-
-            dockerCode = dockerCode + element;
-            
-            //get the containers
-            for (let index = 1; index < parts.length; index++) {
-                //check if are in the body of the current container
-                //console.log(element);
-                if(parts[index].includes(String(element)))
-                {
-                    //console.log("asdasd");                    
-                    dockerCode = dockerCode  + this.getRules(parts[index]);
-                    break;
-                }
-                    
-            }
-                     
-            //Create de directory if doesn't exist and the dockerfile as well 
-            let fileDirectory = rootDirectory +'/'+ element; 
-            if(!existsSync(fileDirectory))
+            if(element)
             {
-                mkdirSync(fileDirectory);
-            }
-            writeFileSync(fileDirectory +'/DOCKERFILE' , dockerCode);
+                dockerCode = dockerCode + element;
             
-            //restart code
-            dockerCode = "FROM ";
+                //get the containers
+                for (let index = 1; index < parts.length; index++) {
+                    //check if are in the body of the current container
+                    //console.log(element);
+                    if(parts[index].includes(String(element)))
+                    {
+                        //console.log("asdasd");                    
+                        dockerCode = dockerCode  + this.getRules(parts[index]);
+                        break;
+                    }
+                        
+                }
+                //console.log(dockerCode); 
+                //Create de directory if doesn't exist and the dockerfile as well 
+                let fileDirectory = rootDirectory +'/'+ element; 
+                if(!existsSync(fileDirectory))
+                {
+                    mkdirSync(fileDirectory);
+                }
+                writeFileSync(fileDirectory +'/DOCKERFILE' , dockerCode);
+                
+                //restart code
+                
+                dockerCode = "FROM ";
+            }
         });
-        
-        console.log("DONE!");
-        
+        //console.log("DONE!");
     }
 
     private getLanguage(firstPart: String){    
