@@ -16,12 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"For Loop": 
-	{
-	  "prefix": ["hello"],
-	  "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
-	  "description": "A for loop."
-	},
+	
 	"ADD": {
         "prefix": "ADDING STRING1 AT STRING2, ...",
         "body": [
@@ -103,7 +98,7 @@
 	"HEALTHCHECK": {
         "prefix": "CHECKING paramas",
         "body": [
-            "WITH THE TAG ${1|NADA,params|}"
+            "WITH THE TAG ${1|NONE,params|}"
         ],
 		"description": "Tells Docker how to test a container to check that it is still working.",
 		

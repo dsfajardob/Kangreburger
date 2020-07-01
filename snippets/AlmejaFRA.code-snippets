@@ -16,12 +16,7 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"For Loop": 
-	{
-	  "prefix": ["hola"],
-	  "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
-	  "description": "A for loop."
-	},
+	
 	"ADD": {
         "prefix": "AJOUTER DE LA STRING1 À LA STRING2, ...",
         "body": [

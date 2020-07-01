@@ -29,7 +29,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.almejalang",
-				"match": "\\b(if|while|for|return|NECESITO|EJECUTE)\\b"
+				"match": "\\b(if|while|for|return|NECESITO|EJECUTE|NEED|RUN)\\b"
 			}]
 		},
 		"strings": {
@@ -46,31 +46,31 @@
 		"auxiliars": {
 			"patterns": [{
 				"name": "keyword.other.almejalang",
-				"match": "\\b(EL|EN|DE|A|LA|LOS|LAS|PARA|CON|QUE)\\b"
+				"match": "\\b(EL|EN|DE|A|LA|LOS|LAS|PARA|CON|QUE|POR|FROM|AT|THE|WHEN|THAT|WITH|TO|AN|FOR)\\b"
 			}]		
 		},
 		"reserved":{
 			"patterns": [{
 				"name": "variable.languaje.almejalang",
-				"match": "\\b(VOLUMEN|CONTENEDOR|USUARIO|TRABAJO|ENTORNO|PUERTO|DIRECTORIO)\\b"
+				"match": "\\b(VOLUMEN|CONTENEDOR|USUARIO|TRABAJO|ENTORNO|PUERTO|DIRECTORIO|UBICACION|VOLUME|CONTAINER|USER|WORK|ENVIRONMENTAL|PORT|DIRECTORY|LOCATION)\\b"
 			}]
 		},
 		"common":{
 			"patterns": [{
 				"name": "string.other.almejalang",
-				"match": "\\b(VARIABLE|VARIABLES|ARGUMENTO|ARGUMENTOS|ETIQUETA|ETIQUETAS)\\b"
+				"match": "\\b(VARIABLE|VARIABLES|ARGUMENTO|ARGUMENTOS|ETIQUETA|ETIQUETAS|TAG|TAGS)\\b"
 			}]
 		},
 		"orders":{
 			"patterns": [{
 				"name": "support.function.almejalang",
-				"match": "\\b(SHELL|CMD|CONSTRUIR)\\b"
+				"match": "\\b(SHELL|CMD|CONSTRUIR|BUILDING)\\b"
 			}]
 		},
 		"infinitive":{
 			"patterns": [{
 				"name": "entity.name.type.almejalang",
-				"match": "\\b(AGREGANDO|COPIANDO|INICIANDO|REVISANDO|DETENIENDO)\\b"
+				"match": "\\b(AGREGANDO|COPIANDO|INICIANDO|REVISANDO|DETENIENDO|ADDING|COPYING|STARTING|CHECKING|STOPPING)\\b"
 			}]
 		}
 

@@ -163,7 +163,28 @@ export class  Translator{
     
     //Here the language map most be initilialized
     initENG(){
-
+        this.ENG.set("NEED","x");
+        //this.ESP.set("DE","FROM");
+        this.ENG.set("RUNS","RUN");
+        this.ENG.set("TAG","LABEL");
+        this.ENG.set("TAGS","LABEL");
+        this.ENG.set("PORT","EXPOSE");
+        this.ENG.set("ENVIRONMENTAL","ENV");
+        this.ENG.set("ADDING","ADD");
+        this.ENG.set("COPYING","COPY");
+        this.ENG.set("STARTING","ENTRYPOINT");
+        this.ENG.set("LOCATION","VOLUME");
+        this.ENG.set("VOLUME","VOLUME");
+        this.ENG.set("USER","USER");
+        this.ENG.set("DIRECTORY","DIR");
+        this.ENG.set("ARGUMENT","ARG");
+        this.ENG.set("ARGUMENTS","ARG");
+        this.ENG.set("BUILDING","ONBUILD");
+        this.ENG.set("STOPPING","STOPSIGNAL");
+        this.ENG.set("NONE","HEALTHCHECK");
+        this.ENG.set("CHECKING","HEALTHCHECK");
+        this.ENG.set("SHELL","SHELL");
+        this.ENG.set("CMD","CMD");
     }
     //Here the language map most be initilialized
     initDEU(){
@@ -176,37 +197,96 @@ export class  Translator{
     
     reservedWords = [
         "NECESITO", //
+        "NEED",
+
         "DE",//
+        "OF",
+
         "QUE",//
+        "THAT",
+
         "EJECUTE",//
+        "RUNS",
+
         "CON",//
-        "LA",//
+        "WITH",
+
         "ETIQUETA",//
+        "TAG",
+
+        "ETIQUETAS",//
+        "TAGS",
+
+        "EN",//
+        "AT",
+        "TO",
+
+        "EL",//
+        "LA",//
+        "THE",
         "LAS",//
         "LOS",//
-        "ETIQUETAS",//
-        "EN",//
-        "EL",//
+
         "PUERTO",//
+        "PORT",
+
         "VARIABLE",//
+
         "ENTORNO",//
+        "ENVIRONMENTAL",
+
         "VARIABLES",//
+
         "AGREGANDO",//
+        "ADDING",
+
         "COPIANDO",//
+        "COPYING",
+
         "INICIANDO",//
-        "UBICACION",
+        "STARTING",
+
+        "UBICACION",//
+        "LOCATION",
+
         "VOLUMEN",//
+        "VOLUME",
+
         "PARA",//
+        "FOR",
+
         "USUARIO",//
-        "DIRECTORIO",
+
+        "DIRECTORIO",//
+        "DIRECTORY",
+
         "TRABAJO",//
+        "WORK",
+
         "ARGUMENTO",//
+        "ARGUMENT",
+
         "ARGUMENTOS",//
+        "ARGUMENTS",
+
         "CONSTRUIR",//
+        "BUILDING",
+
         "DETENIENDO",//
+        "STOPPING",
+
         "A",//
+        "AN",
+
+        "AL",//
+        "WHEN",
+
         "REVISANDO",//
+        "CHECKING",
+
         "NADA",
+        "NONE",
+
         "SHELL",//
         "CMD",//
     ];
