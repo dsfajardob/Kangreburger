@@ -28,5 +28,23 @@
 			]
 		}
 	},
+	"contributes": {
+		"semanticTokenTypes": [
+		  {
+			"id": "templateType",
+			"superType": "type",
+			"description": "A template type."
+		  }
+		],
+		"semanticTokenModifiers": [
+		  {
+			"id": "native",
+			"description": "Annotates a symbol that is implemented natively"
+		  }
+		]
+	  },
+	  "semanticTokenColors": {
+		"variable.readonly:java": "#ff0000"
+	  },
 	"scopeName": "src"
 }

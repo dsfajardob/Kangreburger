@@ -21,6 +21,239 @@
 	  "prefix": ["hola"],
 	  "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
 	  "description": "A for loop."
-	}
+	},
+	"ADD": {
+        "prefix": "AJOUTER DE LA STRING1 À LA STRING2, ...",
+        "body": [
+            "AJOUTER DE LA ${1:STRING1} = ${2:STRING2} ,"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},"ARG": {
+        "prefix": "AVEC L'ARGUMENT params",
+        "body": [
+            "AVEC L'ARGUMENT ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"ARG1": {
+        "prefix": "AVEC LES ARGUMENTS param1, params2",
+        "body": [
+            "AVEC LES ARGUMENTS ${1:params1}, ${2:params2}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"CMD": {
+        "prefix": "CMD",
+        "body": [
+            "${1:CMD}"
+        ],
+		"description": "Llamado al CMD",
+		
+	},
+	"CONTAINERS": {
+        "prefix": "CONTENEURS",
+        "body": [
+            "CONTENEURS ${1|STRING1,STRING2 STRING2|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},"COPY": {
+        "prefix": "COPIE DE STRING1 EN STRING2, ...",
+        "body": [
+            "COPIE DE ${1:STRING1} = ${2:STRING2} ,"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"ENTRYPOINT": {
+        "prefix": "COMMENCER PAR LES params",
+        "body": [
+            "COMMENCER PAR LES ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"ENV": {
+        "prefix": "AVEC LES VARIABLES DE L'ENVIRONNEMENT params",
+        "body": [
+            "${1|AVEC LES VARIABLES DE L'ENVIRONNEMENT params,AVEC LES VARIABLES DE L'ENVIRONNEMENT params params|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"EXPOSE": {
+        "prefix": "AU PORT params",
+        "body": [
+            "AU PORT ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"FROM": {
+        "prefix": "DE images",
+        "body": [
+            "DE ${1:images}"
+        ],
+		"description": "CONTENEDORES",
+		
+	},
+	"HEALTHCHECK": {
+        "prefix": "RÉVISION paramas",
+        "body": [
+            "AVEC L'ÉTIQUETTE ${1|NADA,params|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"IMAGES": {
+        "prefix": "images",
+        "body": [
+            "${params}"
+        ],
+		"description": "CONTENEDORES",
+		
+	},
+	"INT": {
+        "prefix": "int",
+        "body": [
+            "${1:n}"
+        ],
+		"description": "1 - 999999"
+		
+	},
+	"LABEL1": {
+        "prefix": "AVEC DES ÉTIQUETTES STRING1 = STRING2...",
+        "body": [
+            "${1|AVEC L'ÉTIQUETTE STRING1 = STRING2,AVEC DES ÉTIQUETTES STRING1 = STRING2|}",
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+
+	"LABEL": {
+        "prefix": "AVEC L'ÉTIQUETTE STRING1 = STRING2",
+        "body": [
+            "1|AVEC L'ÉTIQUETTE STRING1 = STRING2",
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"LABEL_VARIOUS": {
+        "prefix": "AVEC DES ÉTIQUETTES STRING1 = STRING2 ...",
+        "body": [
+            "AVEC DES ÉTIQUETTES ${1:STRING1} = ${2:STRING2} ,"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"MORE": {
+		"prefix": ", STRING3 = STRING4",
+		"body": [
+			", ${1:STRING} = ${2:STRING}"
+		],
+		"description": ""
+	},
+	"ONBUILD": {
+        "prefix": "LORS DE LA CONSTRUCTION DE LA STRING1 ",
+        "body": [
+            "LORS DE LA CONSTRUCTION DE LA ${1:STRING1}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"PARAMS": {
+        "prefix": "params",
+        "body": [
+            "${STRING} ,"
+        ],
+		"description": "PARAMETROS",
+		
+	},
+	"RUN": {
+        "prefix": "VOUS RUN STRING ",
+        "body": [
+            "VOUS RUN ${1:STRING}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"SHELL": {
+        "prefix": "SHELL PARAMS",
+        "body": [
+            "SHELL ${1:PARAMS}"
+        ],
+		"description": "Llamar parametros del SHELL",
+		
+	},
+	"START_VARIOUS": {
+        "prefix": "J'AI BESOIN DE N CONTENANTS DE",
+        "body": [
+            "J'AI BESOIN DE $N ${1|CONTENANT,CONTENANTS|} DE ${2:CONTENANT1, CONTENANT2...} :\r",
+            "/*TODO: déclarer des conteneurs*\r",
+			" * \r",
+            " */\r",
+            "${3:CONTENANT1: }"
+
+            //"add_action('init', '$1');\r",
+			//"/**\r",
+			//" * $2\r",
+			//" */\r",
+			//"function $1(){\r",
+			//"    $3\r",
+        ],
+        "description": "Regla inicial de la gramática",
+        
+	},
+	"STOPSIGNAL": {
+        "prefix": "STOPPING STRING/INT",
+        "body": [
+            "STOPPING ${1|STRING,INT|}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"STRING": {
+        "prefix": "STRING",
+        "body": [
+            "${nombre:STRING}"
+        ],
+		"description": " ((a-z)*(A-Z)* (. , _ -  “ ‘)(0-9)*)*",
+		
+	},
+	"VOLUME_UBI": {
+        "prefix": "SUR LA LOCALISATION params",
+        "body": [
+            "SUR LA LOCALISATION ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"USER": {
+        "prefix": "POUR LES UTILISATEURS users",
+        "body": [
+            "POUR LES UTILISATEURS ${1:users}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"VOLUME": {
+        "prefix": "DANS LE VOLUME params",
+        "body": [
+            "DANS LE VOLUME ${1:params}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
+	"WORKDIR": {
+        "prefix": "DANS LE RÉPERTOIRE DE TRAVAIL DE STRING",
+        "body": [
+            "DANS LE RÉPERTOIRE DE TRAVAIL DE ${1:STRING}"
+        ],
+		"description": "Regla inicial de la gramática",
+		
+	},
   
 }
