@@ -32,19 +32,15 @@ export class  Translator{
             for (let index = 1; index < parts.length; index++) {
                 //check if are in the body of the current container
                 //console.log(element);
-                
                 if(parts[index].includes(String(element)))
                 {
-                    //console.log("asdasd");
-                    
-                    this.getRules(parts[index]);
+                    //console.log("asdasd");                    
+                    dockerCode = dockerCode  + this.getRules(parts[index]);
                     break;
                 }
                     
             }
-            
-
-            /*            
+                     
             //Create de directory if doesn't exist and the dockerfile as well 
             let fileDirectory = rootDirectory +'/'+ element; 
             if(!existsSync(fileDirectory))
@@ -52,7 +48,8 @@ export class  Translator{
                 mkdirSync(fileDirectory);
             }
             writeFileSync(fileDirectory +'/DOCKERFILE' , dockerCode);
-            */
+            
+            //restart code
             dockerCode = "FROM ";
         });
         
@@ -86,7 +83,7 @@ export class  Translator{
         for (let index = 3; index < containers.length; index++) {            
             let container: String = "";
 
-            if(containers[index].indexOf(",")>= 0){
+            if(containers[index].indexOf(",") >= 0){
                 container = containers[index].slice(0,containers[index].indexOf(",")); 
             }
             else if(containers[index].indexOf(":")>= 0){
@@ -103,18 +100,32 @@ export class  Translator{
         //and split this to check every word in case this
         //word is a reserverd word by the languaje
         let body = containerBody.split(":")[1].split(" ");
+        let dockerBody = "";
+        let currentRule = "";
         body.forEach(word => {
             //console.log(word + "    testlight");
-            
-            if(this.reservedWords.includes(word))
-            {
+            //here 
+            if(this.reservedWords.includes(word)){
                 //console.log(word);
-                
+                if(this.CurrentLanguaje.get(word)){
+                    currentRule = this.CurrentLanguaje.get(word)
+                    dockerBody = dockerBody + "\n" + currentRule;
+                }                
+            } else { //in case dont, just add to the file
+                //si existe una coma son varios parametros asi que metalos
+                if(word === "," || word.indexOf(",") >= 0 ){
+                    
+                    word = word.slice(0,word.indexOf(","));
+                    dockerBody = dockerBody + " " + word + "\n" + currentRule;
+                    //console.log("UNA COMA");
+                } else {
+                    dockerBody = dockerBody + " " + word;
+                }
             }
         });
-        
-        
-        return " ";
+        //console.log(dockerBody);
+        //console.log("finish");
+        return dockerBody;
     }
 
     private initMaps(){
@@ -134,7 +145,7 @@ export class  Translator{
         this.ESP.set("ENTORNO","ENV");
         this.ESP.set("AGREGANDO","ADD");
         this.ESP.set("COPIANDO","COPY");
-        this.ESP.set("INCIANDO","ENTRYPOINT");
+        this.ESP.set("INICIANDO","ENTRYPOINT");
         this.ESP.set("UBICACION","VOLUME");
         this.ESP.set("VOLUMEN","VOLUME");
         this.ESP.set("USUARIO","USER");
