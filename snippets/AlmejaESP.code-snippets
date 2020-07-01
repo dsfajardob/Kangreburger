@@ -27,14 +27,14 @@
         "body": [
             "AGREGANDO ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Copia nuevos archivos, directorios o URL de archivos remotos desde <src> y los agrega al sistema de archivos de la imagen en la ruta <dest>.",
 		
 	},"ARG": {
         "prefix": "CON EL ARGUMENTO params",
         "body": [
             "CON EL ARGUMENTO ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Define una variable que los usuarios pueden pasar en el momento de la compilación al constructor con el comando de compilación de la ventana acoplable utilizando el indicador --build-arg <varname> = <value>.",
 		
 	},
 	"ARG1": {
@@ -42,7 +42,7 @@
         "body": [
             "CON LOS ARGUMENTOS ${1:params1}, ${2:params2}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Define una variable que los usuarios pueden pasar en el momento de la compilación al constructor con el comando de compilación de la ventana acoplable utilizando el indicador --build-arg <varname> = <value>.",
 		
 	},
 	"CMD": {
@@ -58,14 +58,14 @@
         "body": [
             "CONTENEDORES ${1|STRING1,STRING2 \rSTRING2|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Declaración de varios contenedores.",
 		
 	},"COPY": {
         "prefix": "COPIANDO STRING1 EN STRING2, ...",
         "body": [
             "COPIANDO ${1:STRING1} EN ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Copia nuevos archivos o directorios de <src> y los agrega al sistema de archivos del contenedor en la ruta <dest>.",
 		
 	},
 	"ENTRYPOINT": {
@@ -73,7 +73,7 @@
         "body": [
             "INICIANDO CON ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Declaración de punto de entrada, le permite configurar un contenedor que se ejecutará como un ejecutable.",
 		
 	},
 	"ENV": {
@@ -81,7 +81,7 @@
         "body": [
             "${1|CON LA VARIABLE DE ENTORNO params,CON LAS VARIABLES DE ENTORNO params params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Establece la variable de entorno <key> en el valor <value>.",
 		
 	},
 	"EXPOSE": {
@@ -89,7 +89,7 @@
         "body": [
             "EN EL PUERTO ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Informa a Docker que el contenedor escucha en los puertos de red especificados en tiempo de ejecución. Puede especificar si el puerto escucha en TCP o UDP, y el valor predeterminado es TCP si no se especifica el protocolo.",
 		
 	},
 	"FROM": {
@@ -97,7 +97,7 @@
         "body": [
             "DE ${1:images}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Inicializa una nueva etapa de construcción y establece la imagen de base para instrucciones posteriores.",
 		
 	},
 	"HEALTHCHECK": {
@@ -105,7 +105,7 @@
         "body": [
             "CON LA ETIQUETA ${1|NADA,params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Le dice a Docker cómo probar un contenedor para verificar que todavía esté funcionando.",
 		
 	},
 	"IMAGES": {
@@ -113,7 +113,7 @@
         "body": [
             "${params}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Se usa para ejecutar código en un contenedor Docker",
 		
 	},
 	"INT": {
@@ -129,7 +129,7 @@
         "body": [
             "${1|CON LA ETIQUETA STRING1 = STRING2,CON LAS ETIQUETAS STRING1 = STRING2|}",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Agrega metadatos a una imagen. Una etiqueta es un par clave-valor.",
 		
 	},
 
@@ -138,7 +138,7 @@
         "body": [
             "1|CON LA ETIQUETA STRING1 = STRING2",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Agrega metadatos a una imagen. Una etiqueta es un par clave-valor.",
 		
 	},
 	"LABEL_VARIOUS": {
@@ -146,7 +146,7 @@
         "body": [
             "CON LAS ETIQUETAS ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Agrega metadatos a una imagen. Una etiqueta es un par clave-valor.",
 		
 	},
 	"MORE": {
@@ -161,7 +161,7 @@
         "body": [
             "AL CONSTRUIR ${1:STRING1}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Agrega a la imagen una instrucción de disparo que se ejecutará más adelante, cuando la imagen se use como base para otra compilación.",
 		
 	},
 	"PARAMS": {
@@ -177,7 +177,7 @@
         "body": [
             "QUE EJECUTE ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Ejecutará cualquier comando en una nueva capa encima de la imagen actual y confirmará los resultados. La imagen comprometida resultante se usará para el siguiente paso en el Dockerfile.",
 		
 	},
 	"SHELL": {
@@ -185,7 +185,7 @@
         "body": [
             "SHELL ${1:PARAMS}"
         ],
-		"description": "Llamar parametros del SHELL",
+		"description": "Permite anular el shell predeterminado utilizado para la forma de shell de los comandos.",
 		
 	},
 	
@@ -193,9 +193,7 @@
         "prefix": "NECESITO N CONTENEDOR(ES) DE",
         "body": [
             "NECESITO $N ${1|CONTENEDOR,CONTENEDORES|} DE ${2:CONTENEDOR1, CONTENEDOR2...} :\r",
-            "/*TODO: declarar contenedores*\r",
-			" * \r",
-            " */\r",
+            
             "${3:CONTENEDOR1: }"
 
             //"add_action('init', '$1');\r",
@@ -214,7 +212,7 @@
         "body": [
             "DETENIENDO A ${1|STRING,INT|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Establece la señal de llamada del sistema que se enviará al contenedor para salir.",
 		
 	},
 	"STRING": {
@@ -230,7 +228,7 @@
         "body": [
             "EN LA UBICACION ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Crea un punto de montaje con el nombre especificado y lo marca como que contiene volúmenes montados externamente desde el host nativo u otros contenedores.",
 		
 	},
 	"USER": {
@@ -238,7 +236,7 @@
         "body": [
             "PARA EL USUARIO ${1:users}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Establece el nombre de usuario (o UID) y, opcionalmente, el grupo de usuarios (o GID) que se utilizará al ejecutar la imagen y para cualquier instrucción de EJECUTAR, CMD y ENTRYPOINT que la siga en el Dockerfile.",
 		
 	},
 	"VOLUME": {
@@ -246,7 +244,7 @@
         "body": [
             "EN EL VOLUMEN ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Crea un punto de montaje con el nombre especificado y lo marca como que contiene volúmenes montados externamente desde el host nativo u otros contenedores.",
 		
 	},
 	"WORKDIR": {
@@ -254,7 +252,7 @@
         "body": [
             "EN DIRECTORIO DE TRABAJO ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Establece el directorio de trabajo para cualquier RUN, CMD, ENTRYPOINT, COPY y ADD que siguen en el Dockerfile.",
 		
 	},
   

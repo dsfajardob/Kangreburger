@@ -27,14 +27,14 @@
         "body": [
             "HINZUFÜGEN VON ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Kopiert neue Dateien, Verzeichnisse oder Remote-Datei-URLs von <src> und fügt sie dem Dateisystem des Bildes unter dem Pfad <dest> hinzu.",
 		
 	},"ARG": {
         "prefix": "MIT DEN ARGUMENT- params",
         "body": [
             "MIT DEN ARGUMENT- ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Definiert eine Variable, die Benutzer beim Erstellen mit dem Docker-Befehl build mit dem Flag --build-arg <varname> = <value> an den Builder übergeben können.",
 		
 	},
 	"ARG1": {
@@ -42,7 +42,7 @@
         "body": [
             "MIT DEN ARGUMENTEN ${1:params1}, ${2:params2}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Definiert eine Variable, die Benutzer beim Erstellen mit dem Docker-Befehl build mit dem Flag --build-arg <varname> = <value> an den Builder übergeben können.",
 		
 	},
 	"CMD": {
@@ -50,7 +50,7 @@
         "body": [
             "${1:CMD}"
         ],
-		"description": "Llamado al CMD",
+		"description": "CMD ANRUFEN",
 		
 	},
 	"CONTAINERS": {
@@ -58,14 +58,14 @@
         "body": [
             "BEHÄLTER ${1|STRING1,STRING1 STRING2|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Erklärung einer Reihe von Containern",
 		
 	},"COPY": {
         "prefix": "KOPIEREN VON STRING1 ZU STRING2, ...",
         "body": [
             "KOPIEREN VON ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Kopiert neue Dateien oder Verzeichnisse aus <src> und fügt sie dem Dateisystem des Containers unter dem Pfad <dest> hinzu.",
 		
 	},
 	"ENTRYPOINT": {
@@ -73,7 +73,7 @@
         "body": [
             "ANFANG MIT ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Mit der Entrypoint-Deklaration können Sie einen Container konfigurieren, der als ausführbare Datei ausgeführt wird.",
 		
 	},
 	"ENV": {
@@ -81,7 +81,7 @@
         "body": [
             "${1|MIT DER UMWELT VARIABEL params,MIT DEN UMWELTVARIABLEN params params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Setzt die Umgebungsvariable <key> auf den Wert <value>.",
 		
 	},
 	"EXPOSE": {
@@ -89,7 +89,7 @@
         "body": [
             "IM HAFEN ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Informiert Docker, dass der Container zur Laufzeit die angegebenen Netzwerkports überwacht. Sie können angeben, ob der Port TCP oder UDP überwacht, und der Standardwert ist TCP, wenn das Protokoll nicht angegeben ist.",
 		
 	},
 	"FROM": {
@@ -97,7 +97,7 @@
         "body": [
             "DE ${1:images}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Initialisiert eine neue Erstellungsphase und legt das Basis-Image für nachfolgende Anweisungen fest.",
 		
 	},
 	"HEALTHCHECK": {
@@ -105,7 +105,7 @@
         "body": [
             "MIT DEM ETIKETT ${1|NADA,params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Erklärt Docker, wie ein Container getestet werden soll, um zu überprüfen, ob er noch funktioniert.",
 		
 	},
 	"IMAGES": {
@@ -113,7 +113,7 @@
         "body": [
             "${params}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Wird verwendet, um Code in einem Docker-Container auszuführen",
 		
 	},
 	"INT": {
@@ -129,7 +129,7 @@
         "body": [
             "${1|MIT DEM STRING1 -ETIKETT = STRING2,MIT DEN ETIKETTEN STRING1 = STRING2|}",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Fügt einem Bild Metadaten hinzu. Ein LABEL ist ein Schlüssel-Wert-Paar.",
 		
 	},
 
@@ -138,7 +138,7 @@
         "body": [
             "1|MIT DEM ETIKETT STRING1 = STRING2",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Fügt einem Bild Metadaten hinzu. Ein LABEL ist ein Schlüssel-Wert-Paar.",
 		
 	},
 	"LABEL_VARIOUS": {
@@ -146,7 +146,7 @@
         "body": [
             "MIT DEN ETIKETTEN ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Fügt einem Bild Metadaten hinzu. Ein LABEL ist ein Schlüssel-Wert-Paar.",
 		
 	},
 	"MORE": {
@@ -161,7 +161,7 @@
         "body": [
             "BEIM GEBÄUDE ${1:STRING1}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Fügt dem Image eine Triggeranweisung hinzu, die zu einem späteren Zeitpunkt ausgeführt werden soll, wenn das Image als Basis für einen anderen Build verwendet wird.",
 		
 	},
 	"PARAMS": {
@@ -169,7 +169,7 @@
         "body": [
             "${STRING} ,"
         ],
-		"description": "PARAMETROS",
+		"description": "PARAMETER",
 		
 	},
 	"RUN": {
@@ -177,7 +177,7 @@
         "body": [
             "SIE LAUFEN ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Führt alle Befehle in einer neuen Ebene über dem aktuellen Bild aus und schreibt die Ergebnisse fest. Das resultierende festgeschriebene Image wird für den nächsten Schritt in der Docker-Datei verwendet.",
 		
 	},
 	"SHELL": {
@@ -185,16 +185,14 @@
         "body": [
             "SHELL ${1:PARAMS}"
         ],
-		"description": "Llamar parametros del SHELL",
+		"description": "Ermöglicht das Überschreiben der Standard-Shell, die für die Shell-Befehlsform verwendet wird.",
 		
 	},
 	"START_VARIOUS": {
         "prefix": "ICH BRAUCHE N BEHÄLTER VON",
         "body": [
             "ICH BRAUCHE $N ${1|CONTAINER,BEHÄLTER|} DE ${2:CONTAINER1, CONTAINER2...} :\r",
-            "/*TODO: Container deklarieren*\r",
-			" * \r",
-            " */\r",
+            
             "${3:CONTAINER1: }"
         ],
         "description": "ERSTE ERKLÄRUNG DES KÖRPERS DES DOCKERS",
@@ -205,7 +203,7 @@
         "body": [
             "STOPPEN ${1|STRING,INT|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Legt das Systemaufrufsignal fest, das zum Beenden an den Container gesendet wird.",
 		
 	},
 	"STRING": {
@@ -221,7 +219,7 @@
         "body": [
             "ON LOCATION ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Erstellt einen Bereitstellungspunkt mit dem angegebenen Namen und markiert ihn als Speicher für extern bereitgestellte Volumes von nativen Hosts oder anderen Containern.",
 		
 	},
 	"USER": {
@@ -229,7 +227,7 @@
         "body": [
             "FÜR DEN BENUTZER ${1:users}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Legt den Benutzernamen (oder die UID) und optional die Benutzergruppe (oder GID) fest, die beim Ausführen des Images und für alle darauf folgenden RUN-, CMD- und ENTRYPOINT-Anweisungen in der Docker-Datei verwendet werden soll.",
 		
 	},
 	"VOLUME": {
@@ -237,7 +235,7 @@
         "body": [
             "IM VOLUMEN ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Erstellt einen Bereitstellungspunkt mit dem angegebenen Namen und markiert ihn als Speicher für extern bereitgestellte Volumes von nativen Hosts oder anderen Containern.",
 		
 	},
 	"WORKDIR": {
@@ -245,7 +243,7 @@
         "body": [
             "IM ${1:STRING} -ARBEITSVERZEICHNIS"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Legt das Arbeitsverzeichnis für alle Anweisungen RUN, CMD, ENTRYPOINT, COPY und ADD fest, die in der Docker-Datei darauf folgen.",
 		
 	},
   

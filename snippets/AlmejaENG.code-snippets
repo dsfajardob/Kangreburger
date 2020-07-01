@@ -23,26 +23,26 @@
 	  "description": "A for loop."
 	},
 	"ADD": {
-        "prefix": "ADDING STRING1 EN STRING2, ...",
+        "prefix": "ADDING STRING1 AT STRING2, ...",
         "body": [
-            "AGREGANDO ${1:STRING1} = ${2:STRING2} ,"
+            "ADDING ${1:STRING1} AT ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.",
 		
 	},"ARG": {
-        "prefix": "CON EL ARGUMENTO params",
+        "prefix": "WITH THE ARGUMENT params",
         "body": [
-            "CON EL ARGUMENTO ${1:params}"
+            "WITH THE ARGUMENT ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag. ",
 		
 	},
 	"ARG1": {
-        "prefix": "CON LOS ARGUMENTOS param1, params2",
+        "prefix": "WITH THE ARGUMENTS param1, params2",
         "body": [
-            "CON LOS ARGUMENTOS ${1:params1}, ${2:params2}"
+            "WITH THE ARGUMENTS ${1:params1}, ${2:params2}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag.",
 		
 	},
 	"CMD": {
@@ -50,62 +50,62 @@
         "body": [
             "${1:CMD}"
         ],
-		"description": "Llamado al CMD",
+		"description": "CALLING CMD",
 		
 	},
 	"CONTAINERS": {
-        "prefix": "CONTENEDOR(ES)",
+        "prefix": "CONTAINERS",
         "body": [
-            "CONTENEDORES ${1|STRING1,STRING2 STRING2|}"
+            "CONTAINERS ${1|STRING1,STRING2 STRING2|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Declaration of a number of containers",
 		
 	},"COPY": {
-        "prefix": "COPIANDO STRING1 EN STRING2, ...",
+        "prefix": "COPYING STRING1 TO STRING2, ...",
         "body": [
-            "COPIANDO ${1:STRING1} = ${2:STRING2} ,"
+            "COPYING ${1:STRING1} TO ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.",
 		
 	},
 	"ENTRYPOINT": {
-        "prefix": "INICIANDO CON params",
+        "prefix": "STARTING WITH params",
         "body": [
-            "INICIANDO CON ${1:params}"
+            "STARTING WITH ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Entrypoint declaration, allows you to configure a container that will run as an executable.",
 		
 	},
 	"ENV": {
-        "prefix": "CON LA(S) VARIABLE(S) DE ENTORNO params",
+        "prefix": "WITH THE ENVIRONMENTAL VARIABLE params",
         "body": [
-            "${1|CON LA VARIABLE DE ENTORNO params,CON LAS VARIABLES DE ENTORNO params params|}"
+            "${1|WITH THE ENVIRONMENTAL VARIABLE params,WITH THE ENVIRONMENTAL VARIABLES params params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Sets the environment variable <key> to the value <value>.",
 		
 	},
 	"EXPOSE": {
-        "prefix": "EN EL PUERTO params",
+        "prefix": "AT PORT params",
         "body": [
-            "EN EL PUERTO ${1:params}"
+            "AT PORT ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified.",
 		
 	},
 	"FROM": {
-        "prefix": "DE images",
+        "prefix": "OF images",
         "body": [
-            "DE ${1:images}"
+            "OF ${1:images}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Initializes a new build stage and sets the Base Image for subsequent instructions.",
 		
 	},
 	"HEALTHCHECK": {
-        "prefix": "REVISANDO paramas",
+        "prefix": "CHECKING paramas",
         "body": [
-            "CON LA ETIQUETA ${1|NADA,params|}"
+            "WITH THE TAG ${1|NADA,params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Tells Docker how to test a container to check that it is still working.",
 		
 	},
 	"IMAGES": {
@@ -113,7 +113,7 @@
         "body": [
             "${params}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Is used to execute code in a Docker container",
 		
 	},
 	"INT": {
@@ -125,28 +125,28 @@
 		
 	},
 	"LABEL1": {
-        "prefix": "CON LA(S) ETIQUETA(S) STRING1 = STRING2...",
+        "prefix": "WITH THE TAGS STRING1 = STRING2...",
         "body": [
-            "${1|CON LA ETIQUETA STRING1 = STRING2,CON LAS ETIQUETAS STRING1 = STRING2|}",
+            "${1|WITH THE TAGS STRING1 = STRING2,WITH THE TAGS STRING1 = STRING2|}",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Adds metadata to an image. A LABEL is a key-value pair.",
 		
 	},
 
 	"LABEL": {
-        "prefix": "CON LA ETIQUETA STRING1 = STRING2",
+        "prefix": "WITH THE TAG STRING1 = STRING2",
         "body": [
-            "1|CON LA ETIQUETA STRING1 = STRING2",
+            "1|WITH THE TAG STRING1 = STRING2",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Adds metadata to an image. A LABEL is a key-value pair.",
 		
 	},
 	"LABEL_VARIOUS": {
-        "prefix": "CON LAS ETIQUETAS STRING1 = STRING2 ...",
+        "prefix": "WITH THE TAGS STRING1 = STRING2 ...",
         "body": [
-            "CON LAS ETIQUETAS ${1:STRING1} = ${2:STRING2} ,"
+            "WITH THE TAGS ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Adds metadata to an image. A LABEL is a key-value pair.",
 		
 	},
 	"MORE": {
@@ -157,11 +157,11 @@
 		"description": ""
 	},
 	"ONBUILD": {
-        "prefix": "AL CONSTRUIR STRING1 ",
+        "prefix": "WHEN BUILDING STRING1 ",
         "body": [
-            "AL CONSTRUIR ${1:STRING1}"
+            "WHEN BUILDING ${1:STRING1}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Adds to the image a trigger instruction to be executed at a later time, when the image is used as the base for another build. ",
 		
 	},
 	"PARAMS": {
@@ -169,15 +169,15 @@
         "body": [
             "${STRING} ,"
         ],
-		"description": "PARAMETROS",
+		"description": "PARAMETERS",
 		
 	},
 	"RUN": {
-        "prefix": "QUE EJECUTE STRING ",
+        "prefix": "THAT RUNS STRING ",
         "body": [
-            "QUE EJECUTE ${1:STRING}"
+            "THAT RUNS ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Will execute any commands in a new layer on top of the current image and commit the results. The resulting committed image will be used for the next step in the Dockerfile.",
 		
 	},
 	"SHELL": {
@@ -185,30 +185,23 @@
         "body": [
             "SHELL ${1:PARAMS}"
         ],
-		"description": "Llamar parametros del SHELL",
+		"description": "Allows the default shell used for the shell form of commands to be overridden.",
 		
 	},
-	"Project": {
-        "prefix": "!py1",
-        "body": [
-            "NECESITO 1 CONTENEDOR DE sddsdsdsd"
-        ],
-        "description": "Regla inicial de la gramática"
-	},
 	"START_VARIOUS": {
-        "prefix": "NECESITO N CONTENEDOR(ES) DE",
+        "prefix": "NEED AN N CONTAINER (S) OF",
         "body": [
-            "NECESITO $N ${1|CONTENEDOR,CONTENEDORES|} DE "
+            "NEED AN $N ${1|CONTAINER,CONTAINERS|} OF "
         ],
-        "description": "Regla inicial de la gramática",
+        "description": "Initial grammar rule",
         
 	},
 	"STOPSIGNAL": {
-        "prefix": "DETENIENDO A STRING/INT",
+        "prefix": "STOPPING A STRING/INT",
         "body": [
-            "DETENIENDO A ${1|STRING,INT|}"
+            "STOPPING A ${1|STRING,INT|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Sets the system call signal that will be sent to the container to exit. ",
 		
 	},
 	"STRING": {
@@ -220,35 +213,35 @@
 		
 	},
 	"VOLUME_UBI": {
-        "prefix": "EN LA UBICACION params",
+        "prefix": "AT THE LOCATION params",
         "body": [
-            "EN LA UBICACION ${1:params}"
+            "AT THE LOCATION ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.",
 		
 	},
 	"USER": {
-        "prefix": "PARA EL USUARIO users",
+        "prefix": "FOR THE USER users",
         "body": [
-            "PARA EL USUARIO ${1:users}"
+            "FOR THE USER ${1:users}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Sets the user name (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.",
 		
 	},
 	"VOLUME": {
-        "prefix": "EN EL VOLUMEN params",
+        "prefix": "AT VOLUME params",
         "body": [
-            "EN EL VOLUMEN ${1:params}"
+            "AT VOLUME ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.",
 		
 	},
 	"WORKDIR": {
-        "prefix": "EN DIRECTORIO DE TRABAJO STRING",
+        "prefix": "AT WORK DIRECTORY STRING",
         "body": [
-            "EN DIRECTORIO DE TRABAJO ${1:STRING}"
+            "AT WORK DIRECTORY ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.",
 		
 	},
   

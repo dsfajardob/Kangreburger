@@ -27,14 +27,14 @@
         "body": [
             "AJOUTER DE LA ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Copie les nouveaux fichiers, répertoires ou URL de fichiers distants à partir de <src> et les ajoute au système de fichiers de l'image au chemin <dest>.",
 		
 	},"ARG": {
         "prefix": "AVEC L'ARGUMENT params",
         "body": [
             "AVEC L'ARGUMENT ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Définit une variable que les utilisateurs peuvent transmettre au moment de la construction au générateur avec la commande docker build en utilisant l'indicateur --build-arg <varname> = <value>.",
 		
 	},
 	"ARG1": {
@@ -42,7 +42,7 @@
         "body": [
             "AVEC LES ARGUMENTS ${1:params1}, ${2:params2}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Définit une variable que les utilisateurs peuvent transmettre au moment de la construction au générateur avec la commande docker build en utilisant l'indicateur --build-arg <varname> = <value>.",
 		
 	},
 	"CMD": {
@@ -50,7 +50,7 @@
         "body": [
             "${1:CMD}"
         ],
-		"description": "Llamado al CMD",
+		"description": "APPELER CMD",
 		
 	},
 	"CONTAINERS": {
@@ -58,14 +58,14 @@
         "body": [
             "CONTENEURS ${1|STRING1,STRING2 STRING2|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Déclaration d'un certain nombre de conteneurs",
 		
 	},"COPY": {
         "prefix": "COPIE DE STRING1 EN STRING2, ...",
         "body": [
             "COPIE DE ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Copie les nouveaux fichiers ou répertoires de <src> et les ajoute au système de fichiers du conteneur au chemin <dest>.",
 		
 	},
 	"ENTRYPOINT": {
@@ -73,7 +73,7 @@
         "body": [
             "COMMENCER PAR LES ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "La déclaration Entrypoint vous permet de configurer un conteneur qui s'exécutera comme un exécutable.",
 		
 	},
 	"ENV": {
@@ -81,7 +81,7 @@
         "body": [
             "${1|AVEC LES VARIABLES DE L'ENVIRONNEMENT params,AVEC LES VARIABLES DE L'ENVIRONNEMENT params params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Définit la variable d'environnement <key> sur la valeur <value>.",
 		
 	},
 	"EXPOSE": {
@@ -89,7 +89,7 @@
         "body": [
             "AU PORT ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Informe Docker que le conteneur écoute sur les ports réseau spécifiés lors de l'exécution. Vous pouvez spécifier si le port écoute sur TCP ou UDP, et la valeur par défaut est TCP si le protocole n'est pas spécifié.",
 		
 	},
 	"FROM": {
@@ -97,7 +97,7 @@
         "body": [
             "DE ${1:images}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Initialise une nouvelle étape de construction et définit l'image de base pour les instructions suivantes.",
 		
 	},
 	"HEALTHCHECK": {
@@ -105,7 +105,7 @@
         "body": [
             "AVEC L'ÉTIQUETTE ${1|NADA,params|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Explique à Docker comment tester un conteneur pour vérifier qu'il fonctionne toujours.",
 		
 	},
 	"IMAGES": {
@@ -113,7 +113,7 @@
         "body": [
             "${params}"
         ],
-		"description": "CONTENEDORES",
+		"description": "Est utilisé pour exécuter du code dans un conteneur Docker",
 		
 	},
 	"INT": {
@@ -129,7 +129,7 @@
         "body": [
             "${1|AVEC L'ÉTIQUETTE STRING1 = STRING2,AVEC DES ÉTIQUETTES STRING1 = STRING2|}",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Ajoute des métadonnées à une image. Un LABEL est une paire valeur / clé.",
 		
 	},
 
@@ -138,7 +138,7 @@
         "body": [
             "1|AVEC L'ÉTIQUETTE STRING1 = STRING2",
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Ajoute des métadonnées à une image. Un LABEL est une paire valeur / clé.",
 		
 	},
 	"LABEL_VARIOUS": {
@@ -146,7 +146,7 @@
         "body": [
             "AVEC DES ÉTIQUETTES ${1:STRING1} = ${2:STRING2} ,"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Ajoute des métadonnées à une image. Un LABEL est une paire valeur / clé.",
 		
 	},
 	"MORE": {
@@ -161,7 +161,7 @@
         "body": [
             "LORS DE LA CONSTRUCTION DE LA ${1:STRING1}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Ajoute à l'image une instruction de déclenchement à exécuter ultérieurement, lorsque l'image est utilisée comme base pour une autre génération.",
 		
 	},
 	"PARAMS": {
@@ -169,7 +169,7 @@
         "body": [
             "${STRING} ,"
         ],
-		"description": "PARAMETROS",
+		"description": "PARAMÈTRES",
 		
 	},
 	"RUN": {
@@ -177,7 +177,7 @@
         "body": [
             "VOUS RUN ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Exécute toutes les commandes dans un nouveau calque au-dessus de l'image actuelle et valide les résultats. L'image validée résultante sera utilisée pour la prochaine étape du Dockerfile.",
 		
 	},
 	"SHELL": {
@@ -185,16 +185,14 @@
         "body": [
             "SHELL ${1:PARAMS}"
         ],
-		"description": "Llamar parametros del SHELL",
+		"description": "Permet de remplacer le shell par défaut utilisé pour la forme shell des commandes.",
 		
 	},
 	"START_VARIOUS": {
         "prefix": "J'AI BESOIN DE N CONTENANTS DE",
         "body": [
             "J'AI BESOIN DE $N ${1|CONTENANT,CONTENANTS|} DE ${2:CONTENANT1, CONTENANT2...} :\r",
-            "/*TODO: déclarer des conteneurs*\r",
-			" * \r",
-            " */\r",
+            
             "${3:CONTENANT1: }"
 
             //"add_action('init', '$1');\r",
@@ -204,7 +202,7 @@
 			//"function $1(){\r",
 			//"    $3\r",
         ],
-        "description": "Regla inicial de la gramática",
+        "description": "Règle de grammaire initiale",
         
 	},
 	"STOPSIGNAL": {
@@ -212,7 +210,7 @@
         "body": [
             "STOPPING ${1|STRING,INT|}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Définit le signal d'appel système qui sera envoyé au conteneur pour quitter.",
 		
 	},
 	"STRING": {
@@ -228,7 +226,7 @@
         "body": [
             "SUR LA LOCALISATION ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Crée un point de montage avec le nom spécifié et le marque comme contenant des volumes montés en externe à partir d'un hôte natif ou d'autres conteneurs.",
 		
 	},
 	"USER": {
@@ -236,7 +234,7 @@
         "body": [
             "POUR LES UTILISATEURS ${1:users}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Définit le nom d'utilisateur (ou UID) et éventuellement le groupe d'utilisateurs (ou GID) à utiliser lors de l'exécution de l'image et pour toutes les instructions RUN, CMD et ENTRYPOINT qui le suivent dans le Dockerfile.",
 		
 	},
 	"VOLUME": {
@@ -244,7 +242,7 @@
         "body": [
             "DANS LE VOLUME ${1:params}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Crée un point de montage avec le nom spécifié et le marque comme contenant des volumes montés en externe à partir d'un hôte natif ou d'autres conteneurs.",
 		
 	},
 	"WORKDIR": {
@@ -252,7 +250,7 @@
         "body": [
             "DANS LE RÉPERTOIRE DE TRAVAIL DE ${1:STRING}"
         ],
-		"description": "Regla inicial de la gramática",
+		"description": "Définit le répertoire de travail pour toutes les instructions RUN, CMD, ENTRYPOINT, COPY et ADD qui le suivent dans le Dockerfile.",
 		
 	},
   
