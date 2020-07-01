@@ -63,7 +63,7 @@
 	},"COPY": {
         "prefix": "COPIANDO STRING1 EN STRING2, ...",
         "body": [
-            "COPIANDO ${1:STRING1} = ${2:STRING2} ,"
+            "COPIANDO ${1:STRING1} EN ${2:STRING2} ,"
         ],
 		"description": "Regla inicial de la gramática",
 		
@@ -152,7 +152,7 @@
 	"MORE": {
 		"prefix": ", STRING3 = STRING4",
 		"body": [
-			", ${1:STRING} = ${2:STRING}"
+			", ${1:string} = ${2:string}"
 		],
 		"description": ""
 	},

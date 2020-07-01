@@ -7,13 +7,19 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#auxiliars"
+		},
+		{
+			"include": "#reserved"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.almejalang",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|NECESITO)\\b"
 			}]
 		},
 		"strings": {
@@ -26,25 +32,20 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"auxiliars": {
+			"patterns": [{
+				"name": "keyword.other.almejalang",
+				"match": "\\b(EL|EN|DE|A)\\b"
+			}]		
+		},
+		"reserved":{
+			"patterns": [{
+				"name": "entity.name.type.almejalang",
+				"match": "\\b(VOLUMEN|CONTENEDOR)\\b"
+			}]
 		}
+
 	},
-	"contributes": {
-		"semanticTokenTypes": [
-		  {
-			"id": "templateType",
-			"superType": "type",
-			"description": "A template type."
-		  }
-		],
-		"semanticTokenModifiers": [
-		  {
-			"id": "native",
-			"description": "Annotates a symbol that is implemented natively"
-		  }
-		]
-	  },
-	  "semanticTokenColors": {
-		"variable.readonly:java": "#ff0000"
-	  },
 	"scopeName": "src"
 }

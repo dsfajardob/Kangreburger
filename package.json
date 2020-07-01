@@ -13,42 +13,51 @@
 		"onCommand:kangreburger.Compile"
 	],
 	"main": "./out/extension.js",
-	"contributes": {		
+	"contributes": {
 		"commands": [
 			{
 				"command": "kangreburger.Compile",
 				"title": "Compile"
 			}
 		],
-		"languages": [{
-            "id": "almejalang",
-            "aliases": ["Almeja", "almejalang"],
-            "extensions": [".alm"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "almejalang",
-            "scopeName": "src",
-            "path": "./syntaxes/almejalang.tmLanguage.json"
-		}],
-        "snippets": [
-            {
-                "language": "almejalang",
-                "path": "./snippets/AlmejaESP.code-snippets"
-            },
-            {
-                "language": "almejalang",
-                "path": "./snippets/AlmejaENG.code-snippets"
-            },
-            {
-                "language": "almejalang",
-                "path": "./snippets/AlmejaFRA.code-snippets"
-            },
-            {
-                "language": "almejalang",
-                "path": "./snippets/AlmejaDEU.code-snippets"
-            }
-        ]
+		"languages": [
+			{
+				"id": "almejalang",
+				"aliases": [
+					"Almeja",
+					"almejalang"
+				],
+				"extensions": [
+					".alm"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "almejalang",
+				"scopeName": "src",
+				"path": "./syntaxes/almejalang.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "almejalang",
+				"path": "./snippets/AlmejaESP.code-snippets"
+			},
+			{
+				"language": "almejalang",
+				"path": "./snippets/AlmejaENG.code-snippets"
+			},
+			{
+				"language": "almejalang",
+				"path": "./snippets/AlmejaFRA.code-snippets"
+			},
+			{
+				"language": "almejalang",
+				"path": "./snippets/AlmejaDEU.code-snippets"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
